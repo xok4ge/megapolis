@@ -2,26 +2,6 @@ from datetime import datetime as dt
 import csv
 import random
 
-def password():
-    alph = 'abcdefghijklmnopqrstuvwxyz'
-    alph_caps = alph.upper()
-    nums = '0123456789'
-    alp = list(set(alph + alph_caps + nums))
-    part1 = []
-    part2 = []
-    part3 = ''
-    for _ in range(7):
-        if _ < 3:
-            q = random.randint(0, len(alp) - 1)
-            part1.append(alp[q])
-        elif _ >= 3 and _ < 6:
-            q = random.randint(0, len(alp) - 1)
-            part2.append(alp[q])
-        else:
-            part3 = alp[random.randint(0, len(alp) - 1)]
-    passw = alph[random.randint(0, len(alph) - 1)] + ''.join(part1) + nums[
-        random.randint(0, len(nums) - 1)] + ''.join(part2) + alph_caps[random.randint(0, len(alph_caps) - 1)] + part3
-    return passw
 
 with open('scientist.txt', mode='r', encoding='utf-8') as file:
     f = list(csv.reader(file, delimiter='#'))[1:]
