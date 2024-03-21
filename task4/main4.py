@@ -3,6 +3,10 @@ import csv
 import random
 
 def password():
+    """
+    генерация пароля
+    :return: пароль из 10 символов, минимум одна строчная/заглавная/цифра
+    """
     alph = 'abcdefghijklmnopqrstuvwxyz'
     alph_caps = alph.upper()
     nums = '0123456789'
@@ -38,7 +42,7 @@ with open('scientist.txt', mode='r', encoding='utf-8') as file:
     names={}
     for k in f:
         nn = k[0].split()
-        login = nn[0]+'_'+nn[1][0]+nn[2][0]
+        login = nn[0]+'_'+nn[1][0]+nn[2][0]  #преобразование имени
         pas = password()
         names[k[0]] = [login, pas]
 
