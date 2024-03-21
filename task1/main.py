@@ -13,8 +13,8 @@ with open('scientist.txt', mode='r', encoding='utf-8') as file:
             if el[1] == i:
                 dprep[i] += [dt(int(k[0]), int(k[1]), int(k[2]))]
 
-    true_vals = []
-    crime=[]
+    true_vals = []  # оригинальные препараты
+    crime=[] # неориг аллопуринола
     for key, val in (dprep.items()):
         m = dt.date(min(val))
         for el in f:
